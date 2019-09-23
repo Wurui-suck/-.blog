@@ -18,6 +18,7 @@ JS的原型链是JS最难理解的知识点之一，但是它又是极其重要�
 3. 意思就是说``` obj.__proto__```与```构造它的函数.prototype```所指向的地址指向同一个对象，也就是原型。
 ## 3. 总结
 上面这两段话还是有点多，可以浓缩为：
+
 **1. 所有对象都会有一个```__proto__```，它存着一个地址，指向构造它的函数的```prototype```，也就是原型，原型也是一个对象**
 
 **2. 所有的函数都有一个```prototype```,会被它所构造的函数的对象所引用**
@@ -37,7 +38,8 @@ JS的原型链是JS最难理解的知识点之一，但是它又是极其重要�
 
 *3. 既然 ```Object.prototype``` 才是根对象，但是 ```Object.__proto__``` 又引用了 ```Function.prototype``` ,那是不是很奇怪呢？说好的最后是回到根对象的呀！*
 
-解决这个问题，要记住一点：**原型也是一个对象！**既然原型也是一个对象，那么它也会有```__proto__```,所以```Object.__proto__```引用了```Function.prototype```，```Function.prototype.__proto__```又引用了```Object.prototype```，这不就回到了根对象了吗。
+解决这个问题，要记住一点：**原型也是一个对象！**
+既然原型也是一个对象，那么它也会有```__proto__```,所以```Object.__proto__```引用了```Function.prototype```，```Function.prototype.__proto__```又引用了```Object.prototype```，这不就回到了根对象了吗。
 可以有下面等式：
 ```js
 Object.__proto__===Function.prototype

@@ -36,6 +36,7 @@ JS的原型链是JS最难理解的知识点之一，但是它又是极其重要�
 既然Function()也是一个函数，那么他也是由Function所构造的。这听起来有点拗口：我生了我自己？？？大家不必去纠结这个伦理问题，真正的原因是：浏览器构造了Function，然后强行指定了，它的```__proto__``` 引用了它的```prototype```。即``` Function.__proto__===Function.prototype```
 
 *3. 既然 ```Object.prototype``` 才是根对象，但是 ```Object.__proto__``` 又引用了 ```Function.prototype``` ,那是不是很奇怪呢？说好的最后是回到根对象的呀！*
+
 解决这个问题，要记住一点：**原型也是一个对象！**既然原型也是一个对象，那么它也会有```__proto__```,所以```Object.__proto__```引用了```Function.prototype```，```Function.prototype.__proto__```又引用了```Object.prototype```，这不就回到了根对象了吗。
 可以有下面等式：
 ```js
